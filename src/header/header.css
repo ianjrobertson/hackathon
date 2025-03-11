@@ -20,7 +20,7 @@ header {
     border: none;
     cursor: pointer;
     font-size: 2rem;
-    border-radius: 50%;
+    border-radius: 25%;
   }
   
   .navigation:hover {
