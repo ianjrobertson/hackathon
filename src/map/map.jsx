@@ -19,9 +19,9 @@ const Sidebar = () => {
     };
 
     return (
-        <div className={`sidebar ${isExpanded ? 'expanded' : 'collapsed'}`}>
+        <div className={`sidebar ${isExpanded ? '→' : '←'}`}>
             <button onClick={toggleSidebar}>
-                {isExpanded ? 'Collapse' : 'Expand'}
+                {isExpanded ? '←' : '→'}
             </button>
             {isExpanded && (
                 <div className="sidebar-content">
