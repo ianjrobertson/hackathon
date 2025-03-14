@@ -31,7 +31,7 @@ export function Header({className}) {
 
     return (
         <>
-            <header className="flex justify-between items-center p-4 bg-teal-800 text-teal-100 shadow-lg w-full fixed top-0 z-10">
+            <header className="flex justify-between items-center p-4 bg-teal-800 text-teal-100 shadow-lg h-16 w-full fixed top-0 z-10">
                 <button className="text-2xl bg-transparent border-none cursor-pointer hover:bg-teal-100 hover:text-teal-800 rounded p-2" onClick={toggleMenu}>☰</button>
                 <div className="text-2xl font-bold">Sales App</div>
                 {renderButton()}

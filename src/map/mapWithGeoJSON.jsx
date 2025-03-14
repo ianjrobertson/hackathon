@@ -79,7 +79,7 @@ const MapWithGeoJSON = () => {
         <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}
-            zoom={13}
+            zoom={15}
             onLoad={(map) => setMap(map)} // Save reference to map
         >
           {selectedFeature && infoPosition && (
