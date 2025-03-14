@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import MapWithGeoJSON from './mapWithGeoJSON';
+
 import './map.css'
 
 export default function Map() {
@@ -7,6 +9,9 @@ export default function Map() {
             <Sidebar />
             <div className="flex flex-col ml-16 h-full"> {/* Adjust margin to account for the sidebar */}
                 <h1 className="text-4xl font-bold text-black">Map Component</h1>
+            </div>
+            <div>
+                <MapWithGeoJSON />
             </div>
         </div>
     );
