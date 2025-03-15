@@ -10,7 +10,7 @@ const mapContainerStyle = {
 
 const center = { lat: 40.2634, lng: -111.6549 };
 
-const MapWithGeoJSON = () => {
+const MapWithGeoJSON = ({ className }) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: data.apiKey,
   });
@@ -59,8 +59,10 @@ const MapWithGeoJSON = () => {
         
         if (marketValue >= 150000 && marketValue < 350000) {
           color = "#FFD700"; // Yellow for medium price homes ($150,000 - $299,999)
-        } else if (marketValue >= 300000 && marketValue) {
+        } else if (marketValue >= 300000 && marketValue <= 800000) {
           color = "#008000"; // Green for high price homes ($300,000 - $499,999)
+        } else if (marketValue >= 800000) {
+          color = "#800080";
         }
       
         return {
@@ -75,11 +77,11 @@ const MapWithGeoJSON = () => {
   }, [map]);
 
   return isLoaded ? (
-    <div className="h-[750px] w-[1000px]">
+    <div className={`${className}`}>
         <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}
-            zoom={15}
+            zoom={13}
             onLoad={(map) => setMap(map)} // Save reference to map
         >
           {selectedFeature && infoPosition && (

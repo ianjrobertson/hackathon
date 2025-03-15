@@ -12,7 +12,7 @@ function App() {
       <div>
         <Header />
       </div>
-      <main>
+      <main className="pt-16">
         <div className="flex flex-row text-center bg-dark-gray items-center justify-center">
           <Routes>
             <Route path='/' element={<Home />} />
