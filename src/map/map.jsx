@@ -3,7 +3,7 @@ import MapWithGeoJSON from "./mapWithGeoJSON";
 
 const Map = () => {
     return (
-        <div className="flex h-full">
+        <div className="flex">
             <SideBar />
             <MapWithGeoJSON />
         </div>

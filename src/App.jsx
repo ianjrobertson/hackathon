@@ -9,18 +9,17 @@ import NotFound from "./notFound";
 function App() {
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-r from-primary to-secondary">
-      <div className="h-18">
+    <div className="flex flex-col h-screen">
+      <div>
         <Header />
       </div>
-      <main className="h-full">
+      <main className="flex items-center justify-center flex-auto bg-gradient-to-r from-primary to-secondary"> 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/map' element={<Map />} />
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='*' element={<NotFound />} />
-
         </Routes>
       </main>
 

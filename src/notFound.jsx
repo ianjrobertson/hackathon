@@ -12,7 +12,7 @@ const NotFound = () => {
 
     return (
         <>
-            <div className="flex items-center justify-center bg-accent h-screen text-primary text-4xl">
+            <div className="flex items-center justify-center bg-accent text-primary text-4xl">
                 Not Found Redirecting Home
             </div>
         </>
