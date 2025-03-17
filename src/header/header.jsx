@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
-import ButtonIcon from '../map/ButtonIcon';
+import ButtonIcon from "../ui/ButtonIcon";
 
-export function Header({className}) {
+const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -13,6 +13,8 @@ export function Header({className}) {
     const renderButton = () => {
         switch (location.pathname) {
             case '/':
+                return <button onClick={() => navigate('/login')}>Login</button>;
+            case '/map':
                 return <button onClick={() => navigate('/')}>Home</button>;
             default:
                 return <button onClick={() => navigate('/')}>Home</button>;
@@ -21,24 +23,31 @@ export function Header({className}) {
 
     function Menu() {
         return (
-            <div className="">
-                <nav className="">
-                    <NavLink to="/" onClick={toggleMenu} className="">Home</NavLink>
-                    <NavLink to="/map" onClick={toggleMenu} className="">Map</NavLink>
-                    <NavLink to="/login" onClick={toggleMenu} className="">Login</NavLink>
+            <div className='flex items-center justify-center bg-accent h-64'>
+                <nav className='flex flex-col gap-4 text-primary text-2xl'>
+                    <NavLink to="/" onClick={toggleMenu} >Home</NavLink>
+                    <NavLink to="/map" onClick={toggleMenu} >Map</NavLink>
+                    <NavLink to="/about" onClick={toggleMenu} >About</NavLink>
+                    <NavLink to="/login" onClick={toggleMenu} >Login</NavLink>
                 </nav>
             </div>
         );
     }
 
+
+
     return (
         <>
-            <header className="flex justify-between items-center p-4 bg-teal-800 text-teal-100 shadow-lg h-16 w-full fixed top-0 z-10">
+            <header className="flex justify-between items-center text-primary py-2 px-8 bg-accent drop-shadow-md">
                 <ButtonIcon icon={<RxHamburgerMenu size="28" />} text="Navigation Menu" onClick={toggleMenu} />
-                <div className="">Sales App</div>
+                <div>Sales App</div>
                 {renderButton()}
             </header>
             {menuOpen && <Menu />}
         </>
     );
 }
+export default Header;
+
+
+

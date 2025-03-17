@@ -1,17 +1,13 @@
-import React from 'react';
-import SideBar from './Sidebar';
-import MapWithGeoJSON from './mapWithGeoJSON';
-import Home from '../home/home';
+import SideBar from "../ui/SideBar";
+import MapWithGeoJSON from "./mapWithGeoJSON";
 
-export default function Map() {
+const Map = () => {
     return (
-        <>
-            <div className="flex">
-                <SideBar />
-                <Home />
-                {/**<MapWithGeoJSON className="fixed left-16 h-full w-full m-0 bg-gray-900" />*/}
-            </div>
-
-        </>
+        <div className="flex h-full">
+            <SideBar />
+            <MapWithGeoJSON />
+        </div>
     );
-}
+};
+
+export default Map;

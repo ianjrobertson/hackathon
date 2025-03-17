@@ -1,9 +1,9 @@
-export default function Login() {
+const Login = () => {
     return (
-        <div className="">
-            <div className="">
-                <h1 className="">Login Component</h1>
-            </div>
+        <div className="flex items-center justify-center">
+            Login
         </div>
-    )
-}
+    );
+};
+
+export default Login;
