@@ -5,6 +5,7 @@ import Map from "./map/map"
 import About from "./about/about";
 import Login from "./login/login";
 import NotFound from "./notFound";
+import Survey from "./survey/survey";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/map' element={<Map />} />
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/survey' element={<Survey />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>

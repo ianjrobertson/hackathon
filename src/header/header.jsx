@@ -13,11 +13,11 @@ const Header = () => {
     const renderButton = () => {
         switch (location.pathname) {
             case '/':
-                return <button onClick={() => navigate('/login')}>Login</button>;
+                return <button className="cursor-pointer" onClick={() => navigate('/login')}>Login</button>;
             case '/map':
-                return <button onClick={() => navigate('/')}>Home</button>;
+                return <button className="cursor-pointer" onClick={() => navigate('/')}>Home</button>;
             default:
-                return <button onClick={() => navigate('/')}>Home</button>;
+                return <button className="cursor-pointer" onClick={() => navigate('/')}>Home</button>;
         }
     };
 
@@ -29,6 +29,7 @@ const Header = () => {
                     <NavLink to="/map" onClick={toggleMenu} >Map</NavLink>
                     <NavLink to="/about" onClick={toggleMenu} >About</NavLink>
                     <NavLink to="/login" onClick={toggleMenu} >Login</NavLink>
+                    <NavLink to="/survey" onClick={toggleMenu} >Survey</NavLink>
                 </nav>
             </div>
         );
@@ -40,7 +41,7 @@ const Header = () => {
         <>
             <header className="flex justify-between items-center text-primary py-2 px-8 bg-accent drop-shadow-md">
                 <ButtonIcon icon={<RxHamburgerMenu size="28" />} text="Navigation Menu" onClick={toggleMenu} />
-                <div>Sales App</div>
+                <div className='text-4xl'>RepRoute</div>
                 {renderButton()}
             </header>
             {menuOpen && <Menu />}

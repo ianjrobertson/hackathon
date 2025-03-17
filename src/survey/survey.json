@@ -1,0 +1,40 @@
+{
+    "questions": [
+      {
+        "category": "Dominance (Control & Assertiveness)",
+        "items": [
+          "I enjoy taking charge in group situations.",
+          "I prefer to make decisions quickly rather than wait for consensus.",
+          "I am highly competitive and enjoy challenges.",
+          "I feel comfortable giving direct feedback, even if it’s tough to hear."
+        ]
+      },
+      {
+        "category": "Extraversion (Social & Persuasive Nature)",
+        "items": [
+          "I get energy from interacting with others and meeting new people.",
+          "I prefer working on a team rather than alone.",
+          "I enjoy being the center of attention in social or work settings.",
+          "I naturally build relationships and connect with people easily."
+        ]
+      },
+      {
+        "category": "Patience (Consistency & Stability)",
+        "items": [
+          "I prefer having a steady, predictable work environment.",
+          "I like to take my time when making decisions.",
+          "I am comfortable with repetitive tasks and long-term projects.",
+          "I dislike sudden changes in plans or priorities."
+        ]
+      },
+      {
+        "category": "Formality (Structure & Rules)",
+        "items": [
+          "I prefer having clear guidelines and processes to follow.",
+          "I like to double-check my work to make sure it’s perfect.",
+          "I get frustrated when people don’t follow established rules."
+        ]
+      }
+    ]
+  }
+  
