@@ -8,9 +8,9 @@ import { NotFound } from "./notFound";
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
         <Header />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/map" element={<Map />} />

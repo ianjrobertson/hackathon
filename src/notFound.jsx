@@ -12,9 +12,9 @@ export function NotFound() {
 
     return (
         <>
-            <div className="flex items-center justify-center h-screen">
-                <div className="flex flex-col">
-                    <h1 className="text-4xl font-bold text-black">Not Found Redirecting Home</h1>
+            <div className="">
+                <div className="">
+                    <h1 className="">Not Found Redirecting Home</h1>
                 </div>
             </div>
         </>
