@@ -77,7 +77,7 @@ const MapWithGeoJSON = () => {
   }, [map]);
 
   return isLoaded ? (
-    <div className="flex-grow">
+    <div className="flex-auto">
         <GoogleMap
             mapContainerStyle={mapContainerStyle}
             center={center}

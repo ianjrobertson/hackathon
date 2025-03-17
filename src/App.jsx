@@ -13,7 +13,7 @@ function App() {
       <div>
         <Header />
       </div>
-      <main className="flex items-center justify-center flex-auto bg-gradient-to-r from-primary to-secondary"> 
+      <main className="flex-auto bg-gradient-to-r from-primary to-secondary"> 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/map' element={<Map />} />
