@@ -14,11 +14,8 @@ const Home = () => {
         '/images/Slide9.PNG',
     ];
 
-
-
-
     return (
-        <div className="flex items-center px-2 justify-center text-2xl">
+        <div className="flex h-full w-full px-2">
             <Carousel images={images} />
         </div>
     );

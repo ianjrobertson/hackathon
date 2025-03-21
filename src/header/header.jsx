@@ -23,7 +23,7 @@ const Header = () => {
 
     function Menu() {
         return (
-            <div className='flex items-center justify-center bg-accent h-64'>
+            <div className='flex items-center justify-center bg-secondary h-64 drop-shadow-lg'>
                 <nav className='flex flex-col gap-4 text-primary text-2xl'>
                     <NavLink to="/" onClick={toggleMenu} >Home</NavLink>
                     <NavLink to="/map" onClick={toggleMenu} >Map</NavLink>
@@ -39,7 +39,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="flex justify-between items-center text-primary py-2 px-8 bg-accent drop-shadow-md">
+            <header className="flex justify-between items-center text-secondary py-2 px-8 bg-primary drop-shadow-md">
                 <ButtonIcon icon={<RxHamburgerMenu size="28" />} text="Navigation Menu" onClick={toggleMenu} />
                 <div className='text-4xl'>RepRoute</div>
                 {renderButton()}

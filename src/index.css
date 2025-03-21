@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #c7b493;
-    --color-secondary: #153f2b;
+    --color-primary: #153f2b;
+    --color-secondary: #c7b493;
     --color-accent: #ffffff;
     --color-neutral: #231f20;
 }
 
 @layer components {
     .button-icon {
-      @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 shadow-lg bg-primary text-neutral hover:bg-secondary hover:text-neutral rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
+      @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 shadow-lg bg-secondary text-primary hover:bg-secondary hover:text-neutral rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
     }
   
     .button-tooltip {

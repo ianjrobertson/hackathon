@@ -14,7 +14,7 @@ function App() {
       <div>
         <Header />
       </div>
-      <main className="flex-auto bg-gradient-to-r from-primary to-secondary"> 
+      <main className="flex-auto bg-accent"> 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/map' element={<Map />} />

@@ -24,7 +24,7 @@ export default function Survey() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg mx-auto p-4 border rounded-lg shadow-lg"
+        className="max-w-lg mx-auto bg-accent text-neutral p-4 border rounded-lg shadow-lg"
       >
         <h2 className="text-2xl font-bold text-center mb-4">
           Personality Quiz
@@ -47,7 +47,7 @@ export default function Survey() {
                                 className="hidden"
                             >
                             </input>
-                            <span className={`px-3 py-1 border rounded-full ${responses[`${categoryData.category}-${questionIndex}`] === String(num) ? "bg-blue-500 text-white hover:bg-blue-600" : "bg-gray-200 hover:bg-gray-300"}`}>
+                            <span className={`px-3 py-1 border bg-secondary text-accent rounded-full ${responses[`${categoryData.category}-${questionIndex}`] === String(num) ? "bg-blue-500 text-white hover:bg-blue-600" : "bg-gray-200 hover:bg-gray-300"}`}>
                                 {num}
                             </span>
                         </label>
@@ -60,7 +60,7 @@ export default function Survey() {
 
         <button
           type="submit"
-          className="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600"
+          className="mt-4 w-full bg-secondary text-accent py-2 rounded-lg hover:bg-primary"
         >
           Submit
         </button>
