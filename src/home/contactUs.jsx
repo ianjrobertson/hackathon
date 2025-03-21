@@ -7,7 +7,7 @@ const ContactUs = () => {
             <div className="text-center">
                 <p className="">Send us an email and let's get in touch!</p>
                 <button className="text-white bg-blue-600 hover:bg-blue-700 px-1 py-1 rounded my-2">
-                    <a href="mailto:ianjosephrobertson@gmail.com">RepRoute</a>
+                    <a href="mailto:reproute.hackathon@gmail.com?subject=Beta%Testing&body=Hello,%20I%20have%20a%20question%20about...">RepRoute</a>
                 </button>
             </div>
         </div>
