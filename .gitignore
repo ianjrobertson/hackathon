@@ -13,6 +13,7 @@ dist-ssr
 *.local
 maps.config.json
 TAXPARCEL_CURR_SIMPLE.*
+output.geojson
 
 # Editor directories and files
 .vscode/*

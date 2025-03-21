@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, InfoWindow  } from "@react-google-maps/api";
-
 import data from "../../maps.config.json"
 
 const mapContainerStyle = {
   width: "100%",
-  height: "750px",
+  height: "100%",
 };
 
 const center = { lat: 40.2634, lng: -111.6549 };
@@ -18,8 +17,9 @@ const MapWithGeoJSON = () => {
   const [map, setMap] = useState(null);
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [infoPosition, setInfoPosition] = useState(null);
-
-
+  const [homeData, setHomeData] = useState({});
+  
+  //const { markers } = useMapMarkers(map, homeData)
 
   useEffect(() => {
     if (map) {
@@ -41,40 +41,42 @@ const MapWithGeoJSON = () => {
         setSelectedFeature(properties);
         setInfoPosition(event.latLng);
       });
-
-      map.data.setStyle((feature) => {
-        const marketValue = feature.getProperty("MKT_CUR_VA");
-
-        if (marketValue == null || marketValue == undefined || marketValue == 0) {
-          return {
-            strokeColor: "#CCCCCC",
-            strokeWeight: 1,
-            fillColor: "transparent",
-            fillOpacity: 0, 
-          };
-      
-        }
-      
-        let color = "#FF0000";
-        
-        if (marketValue >= 150000 && marketValue < 350000) {
-          color = "#FFD700"; // Yellow for medium price homes ($150,000 - $299,999)
-        } else if (marketValue >= 300000 && marketValue <= 800000) {
-          color = "#008000"; // Green for high price homes ($300,000 - $499,999)
-        } else if (marketValue >= 800000) {
-          color = "#800080";
-        }
-      
-        return {
-          strokeWeight: 2,
-          fillColor: color, // Inside color
-          fillOpacity: 0.6, 
-        };
-      });
-      
-    
     }
   }, [map]);
+
+  useEffect(() => {
+    if (!map) return;
+    map.data.setStyle((feature) => {
+      const marketValue = feature.getProperty("MKT_CUR_VA");
+
+      if (marketValue == null || marketValue == undefined || marketValue == 0) {
+        return {
+          strokeColor: "#CCCCCC",
+          strokeWeight: 1,
+          fillColor: "transparent",
+          fillOpacity: 0, 
+        };
+    
+      }
+    
+      let color = "#FF0000";
+      
+      if (marketValue >= 150000 && marketValue < 350000) {
+        color = "#FFD700"; // Yellow 
+      } else if (marketValue >= 300000 && marketValue <= 800000) {
+        color = "#008000"; // Green 
+      } else if (marketValue >= 800000) {
+        color = "#800080"; // purple
+      }
+      //const homeStatus = homeData[feature.getProperty("OWN_FULL_A")]
+
+      return {
+        strokeWeight: 2,
+        fillColor: color, // Inside color
+        fillOpacity: 0.4,
+      };
+    });
+  }, [map, homeData]);
 
   return isLoaded ? (
     <div className="h-full w-full">
@@ -94,6 +96,28 @@ const MapWithGeoJSON = () => {
             <p><strong>Home Value:</strong> $ { selectedFeature.MKT_CUR_VA || "N/A"}</p>
             <p><strong>Tax Paid:</strong> $ { selectedFeature.TOT_PRV_TA || "Unknown"} </p>
             <p><strong>Address:</strong> { selectedFeature.OWN_FULL_A || "Unkown" }</p>
+            <div className="flex flex-row justify-between mt-3">
+              <button
+              className="text-white bg-green-600 hover:bg-green-700 px-1 py-1 rounded" 
+              onClick={() => setHomeData({...homeData, [selectedFeature.OWN_FULL_A]: "sold"})}>
+                Sold
+              </button>
+              <button 
+              className="text-white bg-blue-600 hover:bg-blue-700 px-1 py-1 rounded"
+              onClick={() => setHomeData({...homeData, [selectedFeature.OWN_FULL_A]: "come_back"})}>
+                Come Back
+              </button>
+              <button 
+              className="text-white bg-yellow-600 hover:bg-yellow-700 px-1 py-1 rounded"
+              onClick={() => setHomeData({...homeData, [selectedFeature.OWN_FULL_A]: "not_home"})}>
+                Not Home
+              </button>
+              <button 
+              className="text-white bg-red-600 hover:bg-red-700 px-1 py-1 rounded"
+              onClick={() => setHomeData({...homeData, [selectedFeature.OWN_FULL_A]: "not_interested"})}>
+                Not Interested
+              </button>
+            </div>
           </div>
         </InfoWindow>
       )}
