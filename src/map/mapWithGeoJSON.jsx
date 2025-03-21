@@ -10,7 +10,7 @@ const mapContainerStyle = {
 
 const center = { lat: 40.2634, lng: -111.6549 };
 
-const MapWithGeoJSON = () => {
+const MapWithGeoJSON = ({dataSet}) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: data.apiKey,
   });
@@ -25,10 +25,13 @@ const MapWithGeoJSON = () => {
 
   useEffect(() => {
     if (map) {
-      fetch("/data/edgemont.json")
+      fetch(`${dataSet}`)
         .then((response) => response.json())
         .then((data) => {
-          map.data.addGeoJson(data); 
+            map.data.forEach((feature) => {
+            map.data.remove(feature);
+            });
+            map.data.addGeoJson(data);
         })
         .catch((error) => console.error("Error loading GeoJSON:", error));
 
@@ -44,7 +47,7 @@ const MapWithGeoJSON = () => {
         setInfoPosition(event.latLng);
       });
     }
-  }, [map]);
+  }, [map, dataSet]);
 
   useEffect(() => {
     if (!map) return;

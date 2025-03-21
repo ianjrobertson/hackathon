@@ -1,14 +1,13 @@
-import { BsPlus, BsFillLightningFill } from 'react-icons/bs';
-import { FaFire, FaPoo } from 'react-icons/fa';
 import ButtonIcon from './ButtonIcon';
+import { FaHouseChimney } from 'react-icons/fa6';
 
-const SideBar = () => {
+const SideBar = ({setData}) => {
   return (
-    <aside className="flex flex-col gap-4 bg-gradient-to-b from-accent via-primary to-accent px-1">
-      <ButtonIcon icon={<FaFire size="28" />} text="Fire 🔥" onClick={() => alert('Fire icon clicked!')} />
-      <ButtonIcon icon={<BsPlus size="32" />} text="Add ➕" />
-      <ButtonIcon icon={<BsFillLightningFill size="20" />} text="Lightning ⚡" />
-      <ButtonIcon icon={<FaPoo size="20" />} text="Poo 💩" />
+    <aside className="flex flex-col gap-4 px-1">
+      <ButtonIcon icon={<FaHouseChimney size="28" />} text="Edgemont" onClick={() => setData("/data/edgemont.json")} />
+      <ButtonIcon icon={<FaHouseChimney size="28" />} text="Grandview" onClick={() => setData("/data/grandview.json")}/>
+      <ButtonIcon icon={<FaHouseChimney size="28" />} text="Tree Streets" onClick={() => setData("/data/tree-streets.json")}/>
+      <ButtonIcon icon={<FaHouseChimney size="28" />} text="Provost" onClick={() => setData("/data/provost.json")}/>
     </aside>
   );
 };

@@ -3,7 +3,7 @@ const ButtonIcon = ({ icon, text, onClick }) => {
         <button
             className="button-icon group" onClick={onClick}>
             {icon}
-            <span className="button-tooltip group-hover:scale-100 z-50">{text}</span>
+            <span className="button-tooltip group-hover:scale-100 z-50 text-white">{text}</span>
         </button>
     );
 }
