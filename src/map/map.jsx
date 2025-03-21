@@ -1,3 +1,4 @@
+
 import SideBar from "../ui/SideBar";
 import MapWithGeoJSON from "./mapWithGeoJSON";
 
@@ -11,3 +12,4 @@ const Map = () => {
 };
 
 export default Map;
+
