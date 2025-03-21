@@ -158,3 +158,5 @@ const MapWithGeoJSON = () => {
     <p>Loading map...</p>
   );
 };
+
+export default MapWithGeoJSON;

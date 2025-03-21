@@ -1,10 +1,10 @@
 
 import SideBar from "../ui/SideBar";
-import MapWithGeoJSON from "./mapWithGeoJSON";
+import MapWithGeoJSON from "./MapWithGeoJSON";
 
 const Map = () => {
     return (
-        <div className="flex">
+        <div className="flex h-full w-full">
             <SideBar />
             <MapWithGeoJSON />
         </div>
