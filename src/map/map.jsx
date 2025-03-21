@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, InfoWindow  } from "@react-google-maps/api";
 import data from "../../maps.config.json"
+import calculateHomeScore from "../residenceData/score";
 
 const mapContainerStyle = {
   width: "100%",
@@ -48,6 +49,7 @@ const MapWithGeoJSON = () => {
     if (!map) return;
     map.data.setStyle((feature) => {
       const marketValue = feature.getProperty("MKT_CUR_VA");
+      const homeStatus = homeData[feature.getProperty("OWN_FULL_A")] ?? "not_visited";
 
       if (marketValue == null || marketValue == undefined || marketValue == 0) {
         return {
@@ -60,15 +62,18 @@ const MapWithGeoJSON = () => {
       }
     
       let color = "#FF0000";
+
+      const homeScore = calculateHomeScore({status: homeStatus, value: marketValue});
       
-      if (marketValue >= 150000 && marketValue < 350000) {
+      if (homeScore > 3 && homeScore < 5) {
         color = "#FFD700"; // Yellow 
-      } else if (marketValue >= 300000 && marketValue <= 800000) {
+      } else if (homeScore >= 5) {
         color = "#008000"; // Green 
-      } else if (marketValue >= 800000) {
-        color = "#800080"; // purple
       }
-      //const homeStatus = homeData[feature.getProperty("OWN_FULL_A")]
+
+      if (homeStatus === "sold") {
+        color = "#058ED9"
+      }
 
       return {
         strokeWeight: 2,
@@ -96,6 +101,7 @@ const MapWithGeoJSON = () => {
             <p><strong>Home Value:</strong> $ { selectedFeature.MKT_CUR_VA || "N/A"}</p>
             <p><strong>Tax Paid:</strong> $ { selectedFeature.TOT_PRV_TA || "Unknown"} </p>
             <p><strong>Address:</strong> { selectedFeature.OWN_FULL_A || "Unkown" }</p>
+            <p><strong>Home Score:</strong> { calculateHomeScore({status: homeData[selectedFeature.OWN_FULL_A] ?? "not_visited", value: selectedFeature.MKT_CUR_VA})}</p>
             <div className="flex flex-row justify-between mt-3">
               <button
               className="text-white bg-green-600 hover:bg-green-700 px-1 py-1 rounded" 
