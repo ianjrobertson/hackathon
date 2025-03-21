@@ -19,6 +19,7 @@ const MapWithGeoJSON = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [infoPosition, setInfoPosition] = useState(null);
   const [homeData, setHomeData] = useState({});
+  const [homeNote, setHomeNote] = useState({});
   
   //const { markers } = useMapMarkers(map, homeData)
 
@@ -83,6 +84,17 @@ const MapWithGeoJSON = () => {
     });
   }, [map, homeData]);
 
+  useEffect(() => {
+    if (selectedFeature) {
+      setHomeNote((prevNotes) => {
+        return {
+          ...prevNotes,
+          [selectedFeature.OWN_FULL_A]: prevNotes[selectedFeature.OWN_FULL_A] ?? "",
+        };
+      })
+    }
+  }, [selectedFeature]);
+
   return isLoaded ? (
     <div className="h-full w-full">
         <GoogleMap
@@ -123,6 +135,15 @@ const MapWithGeoJSON = () => {
               onClick={() => setHomeData({...homeData, [selectedFeature.OWN_FULL_A]: "not_interested"})}>
                 Not Interested
               </button>
+            </div>
+            <div>
+              <textarea
+                value={homeNote[selectedFeature.OWN_FULL_A]}
+                onChange={(e) => setHomeNote({...homeNote, [selectedFeature.OWN_FULL_A]: e.target.value})}
+                placeholder="Enter a note..."
+                className="w-full mt-3 h-12 bg-slate-100 resize-none border-2 rounded"
+              >
+              </textarea>
             </div>
           </div>
         </InfoWindow>
