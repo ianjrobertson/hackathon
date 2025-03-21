@@ -62,7 +62,7 @@ const MapWithGeoJSON = () => {
     
       }
     
-      let color = "#FF0000";
+      let color = "#6F7D8C";
 
       const homeScore = calculateHomeScore({status: homeStatus, value: marketValue});
       
@@ -74,6 +74,9 @@ const MapWithGeoJSON = () => {
 
       if (homeStatus === "sold") {
         color = "#058ED9"
+      }
+      if (homeStatus === "not_interested") {
+        color = "#6F7D8C"
       }
 
       return {
