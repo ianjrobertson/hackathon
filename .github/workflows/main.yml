@@ -28,10 +28,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci $$ npm run build
-
-      - name: Debug build output
-        run: ls -la dist/
+          npm ci && npm run build
 
       - name: Update pages artifact
         uses: actions/upload-pages-artifact@v3
