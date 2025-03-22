@@ -16,18 +16,18 @@ const Carousel = ({ images }) => {
     };
 
     return (
-        <div className="relative w-full p-9">
-            <div className="overflow-hidden rounded-lg">
-                <img src={images[currentIndex]} alt="Slide" className="w-full" />
-            </div>
+        <div className="relative w-full flex items-center justify-between p-4">
             <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+                className="bg-primary text-secondary w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-1000 hover:bg-secondary hover:text-primary">
                 &#10094;
             </button>
+            <div className="relative overflow-hidden rounded-lg flex-grow mx-4 flex items-center justify-center">
+                <img src={images[currentIndex]} className="max-w-full max-h-full" />
+            </div>
             <button
                 onClick={nextSlide}
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+                className="bg-primary text-secondary w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-all duration-1000 hover:bg-secondary hover:text-primary">
                 &#10095;
             </button>
         </div>
