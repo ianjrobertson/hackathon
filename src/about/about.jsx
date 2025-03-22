@@ -3,7 +3,10 @@ import ContactUs from "../home/contactUs";
 const About = () => {
     return (
         <div className="h-full flex flex-col">
-            <div className="flex-grow text-center flex flex-col justify-center">
+            <div className="flex-grow justify-center items-center p-4">
+                <img src="/images/Designer.jpeg" />
+            </div>
+            <div className="flex-grow text-center flex flex-col justify-center text-primary p-4">
                 <h1 className="text-4xl mb-4">Mission</h1>
                 <p className="mb-8">Empower sales teams with AI-driven insights to maximize efficiency, minimize wasted effort, and help every rep—rookie or veteran—close more doors with confidence.</p>
 
