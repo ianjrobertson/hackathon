@@ -13,11 +13,11 @@ const Header = () => {
     const renderButton = () => {
         switch (location.pathname) {
             case '/':
-                return <button className="cursor-pointer hover:bg-secondary px-2 py-1 rounded-lg hover:text-primary tansition-all duration-500" onClick={() => navigate('/login')}>Login</button>;
+                return <button className="cursor-pointer hover:bg-secondary px-2 py-1 rounded-lg hover:text-primary transition-all duration-500" onClick={() => navigate('/login')}>Login</button>;
             case '/map':
-                return <button className="cursor-pointer" onClick={() => navigate('/')}>Home</button>;
+                return <button className="cursor-pointer hover:bg-secondary px-2 py-1 rounded-lg hover:text-primary transition-all duration-500" onClick={() => navigate('/')}>Home</button>;
             default:
-                return <button className="cursor-pointer" onClick={() => navigate('/')}>Home</button>;
+                return <button className="cursor-pointer hover:bg-secondary px-2 py-1 rounded-lg hover:text-primary transition-all duration-500" onClick={() => navigate('/')}>Home</button>;
         }
     };
 
@@ -38,12 +38,12 @@ const Header = () => {
     return (
         <>
             <header className="relative z-30 flex justify-between items-center text-secondary py-2 px-8 bg-primary drop-shadow-md">
-                <ButtonIcon 
-                    icon={menuOpen ? <RxCross1 size="28" /> : <RxHamburgerMenu size="28" />} 
-                    text="Navigation Menu" 
-                    onClick={toggleMenu} 
+                <ButtonIcon
+                    icon={menuOpen ? <RxCross1 size="28" /> : <RxHamburgerMenu size="28" />}
+                    text="Navigation Menu"
+                    onClick={toggleMenu}
                 />
-                <div className='text-4xl'>RepRoute</div>
+                <NavLink to="/about" className="text-4xl hover:text-accent duration-500">RepRoute</NavLink>
                 {renderButton()}
             </header>
             {menuOpen && <Menu />}
