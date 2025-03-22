@@ -1,12 +1,43 @@
-# React + Vite
+# RepRoute
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Mission
+Empower sales teams with AI-driven insights to maximize efficiency, minimize wasted effort, and help every rep—rookie or veteran—close more doors with confidence.
 
-Currently, two official plugins are available:
+## Vision
+To revolutionize door-to-door sales by making data-driven selling the industry standard, enabling sales teams to work smarter, not harder.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Values
+- **Efficiency First** - We prioritize smart, data-backed solutions that optimize time and effort for sales teams.
+- **Empowerment** - Our technology enhances reps' potential, giving them the tools to succeed at any experience level.
+- **Integrity in Selling** - Ethical, transparent, and honest sales practices drive long-term success.
+- **Innovation & Adaptability** - We continuously refine our AI and insights to stay ahead of the ever-changing sales landscape.
+- **Customer Success** - The success of our users is our success; we build with sales teams' needs at the core.
 
-## Expanding the ESLint configuration
+## How to Run:
+### Maps API Key
+This project uses Google Maps API. To run it acquire a [google maps API key.](https://developers.google.com/maps/documentation/javascript/get-api-key) 
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then Create a `maps.config.json` file to put your API key in. Put the file in your root directory. 
+
+```javascript
+{
+    "apiKey": "YOUR_API_KEY_HERE"
+}
+```
+
+### Running the code
+Once you have your config file, simply install the dependencies and run the code!
+
+```
+npm install
+```
+
+Then run the code!
+
+```
+npm run dev
+```
+
+## Live demo
+To see our project in action, go to [reprout.ianjrobertson.click](https://reproute.ianjrobertson.click/)
+
