@@ -24,7 +24,8 @@ jobs:
 
       - name: Create Maps config
         run: |
-          echo '{ "apiKey": "${{ secrets.MAPS_API_KEY}}"}' > maps.config.json
+          echo '{ "apiKey": "'${{ secrets.MAPS_API_KEY}}'" }' > maps.config.json
+
 
       - name: Clean install dependencies
         run: |
