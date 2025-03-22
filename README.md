@@ -39,5 +39,5 @@ npm run dev
 ```
 
 ## Live demo
-To see our project in action, go to [reprout.ianjrobertson.click](https://reproute.ianjrobertson.click/)
+To see our project in action, go to [reproute.ianjrobertson.click](https://reproute.ianjrobertson.click/)
 
