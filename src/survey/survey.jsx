@@ -24,7 +24,7 @@ export default function Survey() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg mx-auto bg-accent text-neutral p-4 border rounded-lg shadow-lg"
+        className="max-w-lg mx-auto bg-accent text-neutral p-4 border rounded-lg shadow-lg m-3" 
       >
         <h2 className="text-2xl font-bold text-center mb-4">
           Personality Quiz
