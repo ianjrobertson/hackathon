@@ -34,7 +34,7 @@ const Login = () => {
                                 id="username"
                                 name="username"
                                 required
-                                onChange={(e) => setUsername(e.target.value)} // Update username state
+                                onChange={(e) => setUsername(e.target.value)}
                             />
                         </div>
                         <div className="mb-4">
